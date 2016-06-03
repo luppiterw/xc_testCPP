@@ -21,6 +21,16 @@ namespace
     }
 }
 
+namespace outerInline
+{
+    extern int testInteger;
+    void callThis()
+    {
+        std::cout<<"main.outerInline.call() called"<<std::endl;
+    }
+}
+
+int outerInline::testInteger = 10;
 
 int main(int argc, const char * argv[])
 {
@@ -38,6 +48,10 @@ int main(int argc, const char * argv[])
     testUnNamedSpace();
     testAnonymousSpace();
     
+    
+    std::cout<<"outerInline::testInteger="<<outerInline::testInteger<<std::endl;
+    outerInline::call();
+    outerInline::callThis();
     
     return 0;
 }

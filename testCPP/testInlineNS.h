@@ -69,5 +69,16 @@ namespace testInlineNS
     }
 }
 
+namespace outerInline
+{
+    inline namespace myOuterInline
+    {
+        void call()
+        {
+            std::cout<<"outerInline.myOuterInline.call() called"<<std::endl;
+        }
+    }
+}
+
 
 #endif /* testInlineNS_h */
